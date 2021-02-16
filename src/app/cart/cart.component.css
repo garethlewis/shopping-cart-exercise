@@ -1,0 +1,37 @@
+#cart {
+    height: 100%;
+    padding: 30px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 1rem;
+    border: 1px solid black;
+}
+
+.cart-empty-text {
+    padding: 10px 0;
+}
+
+.cart--header {
+    border-bottom: 1px solid #e8e8e8;
+    padding-bottom: 15px;
+}
+
+.cart-item {
+    padding: 10px 0;
+}
+
+.cart-details {
+    font-size: 12px;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+}
+
+.cart-remove-all--text {
+    cursor: pointer;
+}
+
+.cart-remove-all--text .fa {
+    padding-right: 5px;
+}

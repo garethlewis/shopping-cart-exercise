@@ -1,0 +1,15 @@
+<div>
+    <p class="cart-item--title is-inline">{{ cartItem.product.title }}</p>
+    <div class="is-pulled-right">
+        <fa-icon (click)="increase()" [icon]="faArrowCircleUp" class="cart-item--modify"></fa-icon>
+        <fa-icon (click)="decrease()" [icon]="faArrowCircleDown" class="cart-item--modify"></fa-icon>
+    </div>
+    <div class="cart-item--content">
+      <span class="cart-item--price has-text-primary has-text-weight-bold">
+        £{{ cartItem.product.price }} each
+      </span>
+      <span class="cart-item--quantity has-text-grey is-pulled-right">
+        Quantity: {{ cartItem.quantity }}
+      </span>
+    </div>
+  </div>

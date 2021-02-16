@@ -1,0 +1,28 @@
+<div id="cart">
+    <div class="cart--header has-text-centered">
+        <fa-icon [icon]="faShoppingCart" size="2x"></fa-icon>
+    </div>
+    <p *ngIf="!cart.items.length" class="cart-empty-text has-text-centered">
+        Add some items to the cart!
+    </p>
+    <ul *ngIf="cart.items.length > 0">
+        <li *ngFor="let item of cart.items">
+            <cart-item 
+                (onArrowUpSelected)="increaseQuantity($event)" 
+                (onArrowDownSelected)="decreaseQuantity($event)" 
+                [cartItem]="item">
+            </cart-item>
+        </li>
+        <div class="cart-details">
+            <p>Total Quantity:
+                <span class="has-text-weight-bold">{{ cartQuantity }}</span>
+            </p>
+            <p (click)="removeAll()" class="cart-remove-all--text">
+                <fa-icon [icon]="faTrash" class="cart-item--modify"></fa-icon> Remove all
+            </p>
+        </div>
+    </ul>
+    <button [disabled]="!cart.items.length" class="button is-primary">
+        Checkout (<span class="has-text-weight-bold">£{{ cartTotal }}</span>)
+    </button>
+</div>
